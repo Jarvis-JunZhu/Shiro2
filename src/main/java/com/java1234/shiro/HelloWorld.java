@@ -18,18 +18,18 @@ public class HelloWorld {
 		// 把securityManager实例绑定到SecurityUtils
 		SecurityUtils.setSecurityManager(securityManager);
 		// 得到当前执行的用户
-		Subject subject = SecurityUtils.getSubject();
+		Subject currentUser = SecurityUtils.getSubject();
 		// 创建token令牌，用户名/密码
 		UsernamePasswordToken token = new UsernamePasswordToken("java1234", "123456");
 		try {
 			// 身份认证
-			subject.login(token);
+			currentUser.login(token);
 			System.out.println("身份认证成功");
 		} catch (AuthenticationException e) {
 			e.printStackTrace();
 			System.out.println("身份认证失败");
 		}
-		subject.logout();
+		currentUser.logout();
 	}
 
 }
