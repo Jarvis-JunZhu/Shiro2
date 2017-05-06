@@ -8,11 +8,11 @@ import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.Factory;
 
-public class HelloWorld {
+public class JdbcRealmTest {
 
 	public static void main(String[] args) {
 		// 读取配置文件，初始化SecurityManager工厂
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:jdbc_realm.ini");
 		// 获取securityManager实例
 		SecurityManager securityManager = factory.getInstance();
 		// 把securityManager实例绑定到SecurityUtils
